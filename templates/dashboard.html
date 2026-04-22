@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Welcome, {{ username }}</h1>
+<p>Manage your internship applications, deadlines, and progress below.</p>
+
+<!-- SEARCH + FILTER -->
+<div class="form-card">
+    <h2>Search and Filter</h2>
+
+    <form method="GET" action="/dashboard">
+        <input
+            type="text"
+            name="search"
+            placeholder="Search by company or role"
+            value="{{ search }}"
+        >
+
+        <select name="status">
+            <option value="">All Statuses</option>
+            <option value="Applied" {% if status_filter == 'Applied' %}selected{% endif %}>Applied</option>
+            <option value="Interview" {% if status_filter == 'Interview' %}selected{% endif %}>Interview</option>
+            <option value="Offered" {% if status_filter == 'Offered' %}selected{% endif %}>Offered</option>
+            <option value="Rejected" {% if status_filter == 'Rejected' %}selected{% endif %}>Rejected</option>
+        </select>
+
+        <button type="submit" class="btn">Apply Filter</button>
+    </form>
+</div>
+
+<!-- APPLICATION TABLE -->
+<div class="table-card">
+    <h2>Your Applications</h2>
+
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Deadline</th>
+            <th>Notes</th>
+            <th>Update</th>
+            <th>Action</th>
+        </tr>
+
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.company }}</td>
+            <td>{{ job.role }}</td>
+            <td>
+                <span class="status-badge status-{{ job.status|lower }}">
+                    {{ job.status }}
+                </span>
+            </td>
+            <td>{{ job.deadline }}</td>
+            <td>{{ job.notes }}</td>
+            <td>
+                <form method="POST" action="/update_status/{{ job.id }}">
+                    <select name="status" required>
+                        <option value="Applied" {% if job.status == 'Applied' %}selected{% endif %}>Applied</option>
+                        <option value="Interview" {% if job.status == 'Interview' %}selected{% endif %}>Interview</option>
+                        <option value="Offered" {% if job.status == 'Offered' %}selected{% endif %}>Offered</option>
+                        <option value="Rejected" {% if job.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+
+                    <button type="submit" class="update-btn">Save</button>
+                </form>
+            </td>
+            <td>
+                <a href="/delete/{{ job.id }}" class="delete-btn">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% if jobs|length == 0 %}
+        <p>No applications found. Add one below.</p>
+    {% endif %}
+</div>
+
+<!-- ADD NEW APPLICATION -->
+<div class="form-card">
+    <h2>Add New Application</h2>
+
+    <form method="POST" action="/add">
+        <input type="text" name="company" placeholder="Company Name" required>
+
+        <input type="text" name="role" placeholder="Role Title" required>
+
+        <select name="status" required>
+            <option value="">Select Status</option>
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Offered">Offered</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+
+        <input type="date" name="deadline">
+
+        <textarea name="notes" placeholder="Add notes here..."></textarea>
+
+        <button type="submit" class="btn">Add Application</button>
+    </form>
+</div>
+
+{% endblock %}
