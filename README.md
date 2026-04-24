@@ -39,7 +39,7 @@ Smart Internship Tracker is a web-based application that helps students organize
 - database.db
 - README.md
 
-## Team Members
+## Team Members 
 - Alhaji Kargbo
 - Langston Gwinn
 - Ali-Andro Thaxter
