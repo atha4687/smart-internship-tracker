@@ -23,7 +23,7 @@ Smart Internship Tracker is a web-based application that helps students organize
 ## Installation and Setup
 1. Open the project folder in VS Code.
 2. Start XAMPP and turn on MySQL.
-3. Open phpMyAdmin and make sure a database named `internship_tracker` exists.
+3. Open phpMyAdmin and import `database/schema.sql`.
    - The app can also create this database automatically if the MySQL root user has permission.
 4. Open a terminal in the project folder.
 5. Install the project packages:
@@ -47,8 +47,11 @@ The default database connection is in `app.py`:
 
 These settings match the default XAMPP MySQL setup.
 
+The database structure is saved in `database/schema.sql` so the MySQL database can be recreated from GitHub.
+
 ## Project Structure
 - app.py
+- database/schema.sql
 - templates/
 - static/
 - requirements.txt
