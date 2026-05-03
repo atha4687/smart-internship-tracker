@@ -2,11 +2,36 @@
 
 {% block content %}
 <div class="hero">
-    <h1>Track Your Internship Applications Smarter</h1>
-    <p>
-        Stay organized by managing companies, roles, deadlines, notes, and application statuses
-        all in one place.
-    </p>
-    <a href="/register" class="btn">Get Started</a>
+    <div class="hero-content">
+        <p class="eyebrow">Career planning dashboard</p>
+        <h1>Smart Internship Tracker</h1>
+        <p>
+            Keep every application, deadline, note, and interview update organized in one clean workspace.
+        </p>
+
+        {% if session.get('user_id') %}
+            <a href="/dashboard" class="btn">Go to Dashboard</a>
+        {% else %}
+            <a href="/register" class="btn">Get Started</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <span>01</span>
+        <h2>Track</h2>
+        <p>Save each company, role, deadline, and note before details get lost.</p>
+    </div>
+    <div class="feature-card">
+        <span>02</span>
+        <h2>Filter</h2>
+        <p>Find applications by company, role, or status when your list grows.</p>
+    </div>
+    <div class="feature-card">
+        <span>03</span>
+        <h2>Update</h2>
+        <p>Move applications from applied to interview, offer, or rejected.</p>
+    </div>
 </div>
 {% endblock %}

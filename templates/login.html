@@ -1,11 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Login</h1>
+<div class="auth-page">
+    <div class="auth-intro">
+        <p class="eyebrow">Welcome back</p>
+        <h1>Login</h1>
+        <p>Pick up where you left off and keep your internship search moving.</p>
+    </div>
 
-<form method="POST" class="form-card">
-    <input type="text" name="username" placeholder="Enter username" required>
-    <input type="password" name="password" placeholder="Enter password" required>
-    <button type="submit" class="btn">Login</button>
-</form>
+    <form method="POST" class="form-card auth-card">
+        <input type="text" name="username" placeholder="Enter username" required>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <button type="submit" class="btn">Login</button>
+    </form>
+</div>
 {% endblock %}

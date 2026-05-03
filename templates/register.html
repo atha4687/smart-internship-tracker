@@ -1,11 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Create Account</h1>
+<div class="auth-page">
+    <div class="auth-intro">
+        <p class="eyebrow">Start tracking</p>
+        <h1>Create Account</h1>
+        <p>Build a simple workspace for every internship application you submit.</p>
+    </div>
 
-<form method="POST" class="form-card">
-    <input type="text" name="username" placeholder="Enter username" required>
-    <input type="password" name="password" placeholder="Enter password" required>
-    <button type="submit" class="btn">Register</button>
-</form>
+    <form method="POST" class="form-card auth-card">
+        <input type="text" name="username" placeholder="Enter username" required>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <button type="submit" class="btn">Register</button>
+    </form>
+</div>
 {% endblock %}

@@ -1,106 +1,271 @@
+:root {
+    --green-dark: #174c3c;
+    --green: #28785f;
+    --mint: #dff7ea;
+    --mint-soft: #f2fbf6;
+    --blue: #3157d5;
+    --gold: #d99b2b;
+    --ink: #1e2735;
+    --muted: #657284;
+    --line: #d9e2e7;
+    --danger: #d33b35;
+    --white: #ffffff;
+    --shadow: 0 18px 45px rgba(30, 39, 53, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #f4f8f7;
-    color: #1f2937;
+    background:
+        radial-gradient(circle at top left, rgba(223, 247, 234, 0.9), transparent 36%),
+        linear-gradient(180deg, #f8fbfa 0%, #edf4f1 100%);
+    color: var(--ink);
 }
 
 /* NAVBAR */
 nav {
-    background-color: #065f46;
-    color: white;
-    padding: 18px 40px;
+    background-color: rgba(23, 76, 60, 0.96);
+    color: var(--white);
+    padding: 18px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(23, 76, 60, 0.18);
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+    letter-spacing: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    margin-left: 18px;
+    padding: 9px 12px;
+    border-radius: 8px;
     font-weight: bold;
 }
 
 .nav-links a:hover {
-    opacity: 0.85;
+    background-color: rgba(255, 255, 255, 0.13);
 }
 
 /* LAYOUT */
 .container {
-    width: 88%;
-    margin: 40px auto;
+    width: min(1120px, 88%);
+    margin: 42px auto;
 }
 
-h1, h2 {
-    color: #1f2937;
+h1,
+h2 {
+    color: var(--ink);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* MESSAGES */
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.message.error {
+    background-color: #fee2e2;
+    color: #991b1b;
 }
 
 /* HERO */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(to right, #ecfdf5, #f0fdf4);
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(12, 38, 31, 0.88) 0%, rgba(12, 38, 31, 0.78) 42%, rgba(12, 38, 31, 0.20) 100%),
+        url("/static/images/internship-hero.png") center right / cover no-repeat;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.hero-content {
+    max-width: 560px;
+    padding: 64px;
 }
 
 .hero h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
+    color: var(--white);
+    font-size: 56px;
+    margin-bottom: 18px;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 19px;
+    margin-bottom: 28px;
+}
+
+.hero .eyebrow {
+    color: #9be6bd;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 24px;
+    border: 1px solid rgba(217, 226, 231, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(30, 39, 53, 0.08);
+}
+
+.feature-card span {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.feature-card h2 {
+    margin: 12px 0 8px;
+}
+
+.feature-card p {
+    margin: 0;
 }
 
 /* BUTTONS */
 .btn {
     display: inline-block;
-    background-color: #10b981;
-    color: white;
+    background-color: var(--green);
+    color: var(--white);
     padding: 12px 22px;
     border-radius: 8px;
     text-decoration: none;
     border: none;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 10px 20px rgba(40, 120, 95, 0.22);
 }
 
 .btn:hover {
-    background-color: #059669;
+    background-color: var(--green-dark);
 }
 
 .update-btn {
-    background-color: #2563eb;
-    color: white;
+    background-color: var(--blue);
+    color: var(--white);
     border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
+    padding: 9px 14px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     margin-top: 8px;
 }
 
 .update-btn:hover {
-    background-color: #1d4ed8;
+    background-color: #2444a8;
 }
 
 /* CARDS */
 .form-card,
 .table-card {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 28px;
+    border: 1px solid rgba(217, 226, 231, 0.9);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
     margin-bottom: 30px;
+}
+
+/* DASHBOARD */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-end;
+    margin-bottom: 28px;
+}
+
+.dashboard-header p {
+    margin-bottom: 0;
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 105px);
+    gap: 12px;
+}
+
+.quick-stats div {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(30, 39, 53, 0.07);
+}
+
+.quick-stats span {
+    display: block;
+    color: var(--green-dark);
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.quick-stats p {
+    margin: 4px 0 0;
+    font-size: 13px;
 }
 
 /* FORMS */
@@ -108,36 +273,122 @@ form input,
 form select,
 form textarea {
     width: 100%;
-    padding: 12px;
-    margin-top: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #d1d5db;
+    padding: 13px 14px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    border: 1px solid var(--line);
     border-radius: 8px;
+    background-color: #fbfdfc;
+    color: var(--ink);
     box-sizing: border-box;
+    font: inherit;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--green);
+    outline: 3px solid rgba(40, 120, 95, 0.14);
 }
 
 form textarea {
-    min-height: 100px;
+    min-height: 110px;
     resize: vertical;
 }
 
+label {
+    color: var(--ink);
+    font-weight: bold;
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr auto;
+    gap: 18px;
+    align-items: end;
+}
+
+.filter-form input,
+.filter-form select {
+    margin-bottom: 0;
+}
+
+.application-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 18px;
+}
+
+.application-form textarea,
+.application-form .btn {
+    grid-column: 1 / -1;
+}
+
+.application-form .btn {
+    justify-self: start;
+}
+
+.auth-page {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 30px;
+    align-items: center;
+}
+
+.auth-intro {
+    min-height: 360px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        linear-gradient(90deg, rgba(12, 38, 31, 0.88), rgba(12, 38, 31, 0.28)),
+        url("/static/images/internship-hero.png") center / cover no-repeat;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.auth-intro h1,
+.auth-intro p {
+    color: var(--white);
+}
+
+.auth-intro .eyebrow {
+    color: #9be6bd;
+}
+
+.auth-card {
+    margin-bottom: 0;
+}
+
 /* TABLE */
+.table-wrap {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin-top: 15px;
+    min-width: 850px;
 }
 
 table th,
 table td {
-    border: 1px solid #d1d5db;
-    padding: 12px;
+    border-bottom: 1px solid var(--line);
+    padding: 14px;
     text-align: left;
     vertical-align: top;
 }
 
 table th {
-    background-color: #d1fae5;
+    background-color: var(--mint);
+    color: var(--green-dark);
+}
+
+table tr:hover td {
+    background-color: var(--mint-soft);
 }
 
 .table-card table form {
@@ -152,7 +403,7 @@ table th {
 /* STATUS BADGES */
 .status-badge {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 7px 12px;
     border-radius: 999px;
     font-size: 14px;
     font-weight: bold;
@@ -164,13 +415,13 @@ table th {
 }
 
 .status-interview {
-    background-color: #fef3c7;
-    color: #b45309;
+    background-color: #fff1c2;
+    color: #946100;
 }
 
 .status-offered {
-    background-color: #dcfce7;
-    color: #15803d;
+    background-color: #d7f8df;
+    color: #176b35;
 }
 
 .status-rejected {
@@ -180,11 +431,87 @@ table th {
 
 /* DELETE */
 .delete-btn {
-    color: #dc2626;
-    text-decoration: none;
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font: inherit;
     font-weight: bold;
+    padding: 0;
 }
 
 .delete-btn:hover {
     text-decoration: underline;
+}
+
+.delete-form {
+    margin: 0;
+}
+
+@media (max-width: 850px) {
+    nav {
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 470px;
+        background:
+            linear-gradient(180deg, rgba(12, 38, 31, 0.92), rgba(12, 38, 31, 0.58)),
+            url("/static/images/internship-hero.png") center / cover no-repeat;
+    }
+
+    .hero-content {
+        padding: 36px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .feature-grid,
+    .auth-page,
+    .dashboard-header,
+    .filter-form,
+    .application-form {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header {
+        display: grid;
+        align-items: start;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .container {
+        width: 92%;
+        margin: 28px auto;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        padding-left: 0;
+    }
+
+    .hero-content,
+    .auth-intro,
+    .form-card,
+    .table-card {
+        padding: 24px;
+    }
+
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
 }

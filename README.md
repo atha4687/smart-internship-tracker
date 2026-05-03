@@ -15,28 +15,43 @@ Smart Internship Tracker is a web-based application that helps students organize
 ## Technologies Used
 - Python
 - Flask
-- SQLite
+- MySQL
+- XAMPP
 - HTML
 - CSS
 
 ## Installation and Setup
 1. Open the project folder in VS Code.
-2. Open a terminal in the project folder.
-3. Install Flask:
-   pip3 install flask
+2. Start XAMPP and turn on MySQL.
+3. Open phpMyAdmin and make sure a database named `internship_tracker` exists.
+   - The app can also create this database automatically if the MySQL root user has permission.
+4. Open a terminal in the project folder.
+5. Install the project packages:
+   pip3 install -r requirements.txt
 
 ## How to Run the Project
 1. Make sure you are inside the project folder.
-2. Run:
+2. Start XAMPP MySQL if it is not already running.
+3. Run:
    python3 app.py
-3. Open your browser and go to:
+4. Open your browser and go to:
    http://127.0.0.1:5000
+
+## Database Notes
+The default database connection is in `app.py`:
+
+- host: `localhost`
+- user: `root`
+- password: blank
+- database: `internship_tracker`
+
+These settings match the default XAMPP MySQL setup.
 
 ## Project Structure
 - app.py
 - templates/
 - static/
-- database.db
+- requirements.txt
 - README.md
 
 ## Team Members 
