@@ -67,7 +67,8 @@ These settings match the default XAMPP MySQL setup. If your setup is different, 
 The full database structure is saved in database/schema.sql so the database can be recreated at any time directly from the repository.
 
 Project Structure
-internship-tracker/
+* internship-tracker
+  
 │
 ├── app.py
 ├── requirements.txt
@@ -79,6 +80,8 @@ internship-tracker/
 ├── templates/
 │
 └── static/
+
+
 
  Team Members and Roles
 
