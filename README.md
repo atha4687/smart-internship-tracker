@@ -19,21 +19,21 @@ Charts and statistics to visualize your application progress
 
  Technologies Used
 
-Python
-Flask
-MySQL
-XAMPP
-HTML
-CSS
-Bootstrap
-JavaScript (optional interactivity)
+* Python
+* Flask
+* MySQL
+* XAMPP
+* HTML
+* CSS
+* Bootstrap
+* JavaScript (optional interactivity)
 
 
  Installation and Setup
 
-Clone or download the project and open the folder in VS Code.
-Start XAMPP and turn on MySQL.
-Open phpMyAdmin and create a database called internship_tracker, then import database/schema.sql.
+* Clone or download the project and open the folder in VS Code.
+* Start XAMPP and turn on MySQL.
+* Open phpMyAdmin and create a database called internship_tracker, then import database/schema.sql.
 
 The app can also create the database automatically if the MySQL root user has the required permissions.
 
@@ -44,11 +44,11 @@ Install the required packages: pip3 install -r requirements.txt
 
  How to Run the Project
 
-Make sure you are inside the project folder.
-Start XAMPP and confirm MySQL is running.
-Run the application:
+* Make sure you are inside the project folder.
+* Start XAMPP and confirm MySQL is running.
+* Run the application:
 
-python3 app.py
+  python3 app.py
 
  Open your browser and go to:
 
@@ -63,6 +63,7 @@ password: (leave blank)
 database: internship_tracker
 
 These settings match the default XAMPP MySQL setup. If your setup is different, update the connection settings in app.py before running the app.
+
 The full database structure is saved in database/schema.sql so the database can be recreated at any time directly from the repository.
 
 Project Structure
