@@ -50,7 +50,7 @@ Install the required packages: pip3 install -r requirements.txt
 
   python3 app.py
 
- Open your browser and go to:
+Open your browser and go to:
 
 http://127.0.0.1:5000
 
@@ -66,21 +66,11 @@ These settings match the default XAMPP MySQL setup. If your setup is different, 
 
 The full database structure is saved in database/schema.sql so the database can be recreated at any time directly from the repository.
 
-Project Structure
-* internship-tracker
-  
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── database/
-│   └── schema.sql
-│
-├── templates/
-│
-└── static/
+## Picture Walkthrough
 
+Here's a walkthrough of implemented user stories:
+
+![http://imgur.com/a/](https://github.com/atha4687/smart-internship-tracker/blob/main/intern%20sc%20.jpg)
 
 
  Team Members and Roles
